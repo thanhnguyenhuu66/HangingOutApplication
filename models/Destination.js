@@ -7,18 +7,22 @@ const Destination = mongoose.model('destinations', {
   },
   estimatedPrice: {
     type: Number,
+    require: true,
   },
   estimatedTime: {
     type: Number,
+    require: true,
   },
   openingTime: [{
     type: String,
+    require: true,
   }],
   destination: {
 
   },
-  total rate: {
+  totalRate: {
     type: Number,
+    default: 0,
   },
 });
 
