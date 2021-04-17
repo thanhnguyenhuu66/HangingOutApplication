@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
-const Request = mongoose.model('request', {
+const RequestSchema = mongoose.Schema({
   userId: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     require: true,
   },
   location: {
@@ -26,5 +27,6 @@ const Request = mongoose.model('request', {
     default: 'Alone',
   },
 });
+const Request = mongoose.model('Request', RequestSchema);
 
 module.exports = Request;

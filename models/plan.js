@@ -1,18 +1,21 @@
 const mongoose = require('mongoose');
 
-const Plan = mongoose.model('plan', {
-  requestId: {
-    type: String,
+const PlanSchema = mongoose.Schema({
+  request: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Request',
     require: true,
   },
   destinations: [{
     type: String,
     default: null,
   }],
-  reviewId: {
-    type: String,
+  review: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Review',
     require: true,
   },
 });
+const Plan = mongoose.model('Plan', PlanSchema);
 
 module.exports = Plan;
