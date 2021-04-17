@@ -1,0 +1,18 @@
+<% layout('client/boilerplate') -%>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1><%= post.title %></h1>
+        <h4><%= post.createdAt %></h4>
+        
+        <p><%= post.content %></p>
+
+        <p>Placeholder text by
+          <a href="<%= post.authorBlog %>"><%= post.author %></a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</article>
