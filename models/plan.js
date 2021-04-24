@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const PlanSchema = mongoose.Schema({
   request: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Request',
+    ref: 'Requests',
     require: true,
   },
   destinations: [{
@@ -12,10 +12,10 @@ const PlanSchema = mongoose.Schema({
   }],
   review: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Review',
+    ref: 'Reviews',
     require: true,
   },
 });
-const Plan = mongoose.model('Plan', PlanSchema);
+const Plan = mongoose.model('Plans', PlanSchema);
 
 module.exports = Plan;

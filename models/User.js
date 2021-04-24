@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 'Anonymous',
   },
-  passwords: {
+  password: {
     type: String,
     require: true,
   },
@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
   addresses: [{
     type: String,
   }],
-  phoneNumbers: {
+  phoneNumber: {
     type: String,
     require: true,
   },
@@ -33,6 +33,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('Users', UserSchema);
 
 module.exports = User;
